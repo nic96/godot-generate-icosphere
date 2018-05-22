@@ -1,7 +1,7 @@
 extends ImmediateGeometry
 
 
-var subdivide = 2
+var subdivisions = 2
 onready var functions = preload("res://Functions.gd").new()
 
 func create_tri(corner1, corner2, corner3):
@@ -11,7 +11,7 @@ func create_tri(corner1, corner2, corner3):
 		self.add_vertex(corner)
 
 
-func create_mesh(lla1, lla2, lla3, curr_division = subdivide):
+func create_mesh(lla1, lla2, lla3, curr_division = subdivisions):
 		if curr_division == 0:
 			var corner1 = functions.lla_to_xyz(lla1)
 			var corner2 = functions.lla_to_xyz(lla2)
