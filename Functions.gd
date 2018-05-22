@@ -36,7 +36,7 @@ static func lla_to_xyz(lla): # Lon Lat Alt to x y z converter.
 	var sinLat = sin(deg2rad(lat))
 	var cosLon = cos(deg2rad(lon))
 	var sinLon = sin(deg2rad(lon))
-	var rad = 50.0 + alt;
+	var rad = 50.0 + alt
 	var x = rad * cosLat * cosLon
 	var y = rad * sinLat
 	var z = rad * cosLat * sinLon
@@ -51,14 +51,14 @@ static func mid_point(lla1, lla2):
 	var dLon = deg2rad(lon2 - lon1)
 
 	# convert to radians
-	lat1 = deg2rad(lat1);
-	lat2 = deg2rad(lat2);
-	lon1 = deg2rad(lon1);
+	lat1 = deg2rad(lat1)
+	lat2 = deg2rad(lat2)
+	lon1 = deg2rad(lon1)
 
-	var Bx = cos(lat2) *cos(dLon);
-	var By = cos(lat2) *sin(dLon);
-	var lat3 = atan2(sin(lat1) +sin(lat2),sqrt((cos(lat1) + Bx) * (cos(lat1) + Bx) + By * By));
-	var lon3 = lon1 +atan2(By,cos(lat1) + Bx);
+	var Bx = cos(lat2) * cos(dLon)
+	var By = cos(lat2) * sin(dLon)
+	var lat3 = atan2(sin(lat1) + sin(lat2), sqrt((cos(lat1) + Bx) * (cos(lat1) + Bx) + By * By))
+	var lon3 = lon1 + atan2(By, cos(lat1) + Bx)
 
 	# return lla vector
 	return Vector3(rad2deg(lon3), rad2deg(lat3), (lla1.z + lla2.z) / 2)
