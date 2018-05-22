@@ -32,10 +32,10 @@ static func lla_to_xyz(lla): # Lon Lat Alt to x y z converter.
 	var lon = lla.x
 	var lat = lla.y
 	var alt = lla.z
-	var cosLat = cos(lat * PI / 180.0)
-	var sinLat = sin(lat * PI / 180.0)
-	var cosLon = cos(lon * PI / 180.0)
-	var sinLon = sin(lon * PI / 180.0)
+	var cosLat = cos(deg2rad(lat))
+	var sinLat = sin(deg2rad(lat))
+	var cosLon = cos(deg2rad(lon))
+	var sinLon = sin(deg2rad(lon))
 	var rad = 50.0 + alt;
 	var x = rad * cosLat * cosLon
 	var y = rad * sinLat
