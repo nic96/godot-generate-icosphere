@@ -68,6 +68,5 @@ func _ready():
 	create_mesh(lla5, lla10, lla1)
 	create_mesh(lla5, lla1, lla4)
 	create_mesh(lla4, lla1, lla8)
-	create_mesh(lla4, lla5, lla1)
 
 	self.end()
